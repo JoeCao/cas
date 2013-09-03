@@ -187,6 +187,12 @@
       <artifactId>hibernate-validator</artifactId>
       <scope>runtime</scope>
     </dependency>
+
+      <dependency>
+          <groupId>org.jasig.cas</groupId>
+          <artifactId>cas-server-support-ldap</artifactId>
+          <version>${project.version}</version>
+      </dependency>
   </dependencies>
 
   <build>
