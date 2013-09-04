@@ -184,13 +184,18 @@
 	<bean id="attributeRepository"
 		class="org.jasig.services.persondir.support.ldap.LdapPersonAttributeDao">
         <property name="baseDN" value="ou=employee,dc=ofpay,dc=com" />
+        <property name="queryAttributeMapping">
+            <map>
+                <entry key="username" value="uid"/>
+            </map>
+        </property>
         <property name="contextSource" ref="contextSource" />
         <property name="resultAttributeMapping">
             <map>
-                <entry key="cn" value="Name"/>
-                <entry value="Telephone" key="telephoneNumber" />
-                <entry value="Full Name" key="fullName" />
-                <entry value="Email" key="mail" />
+                <entry key="employeeNumber" value="employeeNumber"/>
+                <entry key="displayName" value="displayName"/>
+                <entry key="mail" value="mail"/>
+                <entry key="telephoneNumber" value="telephoneNumber"/>
             </map>
         </property>
 	</bean>
@@ -211,6 +216,15 @@
                         <property name="description" value="Allows HTTP(S) and IMAP(S) protocols" />
                         <property name="serviceId" value="^(https?|imaps?)://.*" />
                         <property name="evaluationOrder" value="10000001" />
+                        <property name="ignoreAttributes" value="false" />
+                        <property name="allowedAttributes">
+                            <list>
+                                <value>employeeNumber</value>
+                                <value>displayName</value>
+                                <value>mail</value>
+                                <value>telephoneNumber</value>
+                            </list>
+                        </property>
                     </bean>
                     <!--
                     Use the following definition instead of the above to further restrict access

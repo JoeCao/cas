@@ -43,5 +43,6 @@
                 </c:forEach>
             </cas:proxies>
         </c:if>
+        <!--test-->
     </cas:authenticationSuccess>
 </cas:serviceResponse>
