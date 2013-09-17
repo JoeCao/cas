@@ -124,8 +124,8 @@
 					| edu.someschool.its.cas.MySpecialHandler here, or you might use one of the handlers provided in the adaptors modules.
 					+-->
                 <bean class="ldap.OfpayBindLdapAuthenticationHandler">
-                    <property name="filter" value="uid=%u" />
-                    <property name="searchBase" value="ou=employee,dc=ofpay,dc=com" />
+                    <property name="filter" value="cn=%u" />
+                    <property name="searchBase" value="ou=欧飞网,dc=com1000,dc=local" />
                     <property  name="contextSource"   ref="contextSource" />
                     <property name="passwordEncoder" ref="ofpayPasswordEncoder"/>
                 </bean>
@@ -137,15 +137,16 @@
     <bean id="ofpayPasswordEncoder" class="ldap.OfpayPasswordEncoder"/>
     <bean id="contextSource" class="org.springframework.ldap.core.support.LdapContextSource">
         <property name="anonymousReadOnly" value="false" />
-        <property name="password" value="1234567" />
+        <property name="password" value="Mysql-utf8"/>
         <property name="pooled" value="true" />
         <property name="urls">
             <list>
-                <value>ldap://172.17.5.38:389/</value>
+                <!--<value>ldap://172.17.5.38:389/</value>-->
+                <value>ldap://172.19.0.13:389/</value>
             </list>
         </property>
 
-        <property name="userDn" value="cn=admin,dc=ofpay,dc=com" />
+        <property name="userDn" value="cn=ldaptest,cn=users,dc=com1000,dc=local" />
         <property name="baseEnvironmentProperties">
             <map>
 
@@ -183,19 +184,19 @@
 	 -->
 	<bean id="attributeRepository"
 		class="org.jasig.services.persondir.support.ldap.LdapPersonAttributeDao">
-        <property name="baseDN" value="ou=employee,dc=ofpay,dc=com" />
+        <property name="baseDN" value="ou=欧飞网,dc=com1000,dc=local" />
         <property name="queryAttributeMapping">
             <map>
-                <entry key="username" value="uid"/>
+                <entry key="username" value="cn"/>
             </map>
         </property>
         <property name="contextSource" ref="contextSource" />
         <property name="resultAttributeMapping">
             <map>
-                <entry key="employeeNumber" value="employeeNumber"/>
+                <!--<entry key="employeeNumber" value="sAMAccountName"/>-->
                 <entry key="displayName" value="displayName"/>
-                <entry key="mail" value="mail"/>
-                <entry key="telephoneNumber" value="telephoneNumber"/>
+                <!--<entry key="mail" value="mail"/>-->
+                <!--<entry key="telephoneNumber" value="userAccountControl"/>-->
             </map>
         </property>
 	</bean>
@@ -219,10 +220,10 @@
                         <property name="ignoreAttributes" value="false" />
                         <property name="allowedAttributes">
                             <list>
-                                <value>employeeNumber</value>
+                                <!--<value>employeeNumber</value>-->
                                 <value>displayName</value>
-                                <value>mail</value>
-                                <value>telephoneNumber</value>
+                                <!--<value>mail</value>-->
+                                <!--<value>telephoneNumber</value>-->
                             </list>
                         </property>
                     </bean>

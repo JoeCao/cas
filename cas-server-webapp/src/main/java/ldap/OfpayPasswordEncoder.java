@@ -13,7 +13,8 @@ import org.jasig.cas.authentication.handler.PasswordEncoder;
 public class OfpayPasswordEncoder implements PasswordEncoder {
 
     public String encode(String password) {
-        String hex = DigestUtils.sha256Hex(password);
-        return hex;
+//        String hex = DigestUtils.sha256Hex(password);
+//        return hex;
+        return password;
     }
 }

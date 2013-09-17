@@ -91,7 +91,7 @@ public class OfpayBindLdapAuthenticationHandler extends AbstractLdapUsernamePass
                 this.log.debug("Performing LDAP bind with credential: " + dn);
                 test = this.getContextSource().getContext(
                         finalDn,
-                        getPasswordEncoder().encode(credentials.getPassword()+credentials.getUsername()));
+                        getPasswordEncoder().encode(credentials.getPassword()));
 
                 if (test != null) {
                     return true;
