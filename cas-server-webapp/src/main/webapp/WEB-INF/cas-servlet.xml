@@ -153,7 +153,8 @@
                                  expression-parser="expressionParser"/>
 
   <bean id="terminateWebSessionListener" class="org.jasig.cas.web.flow.TerminateWebSessionListener"
-      p:serviceManagerUrl="${cas.securityContext.serviceProperties.service}" />
+      p:serviceManagerUrl="${cas.securityContext.serviceProperties.service}"
+      p:timeToDieInSeconds="5"/>
 
   <bean id="expressionParser" class="org.springframework.webflow.expression.WebFlowOgnlExpressionParser"/>
 
