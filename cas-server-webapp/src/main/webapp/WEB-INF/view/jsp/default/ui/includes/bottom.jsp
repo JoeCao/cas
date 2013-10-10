@@ -24,15 +24,16 @@
                 <div id="footer" class="fl-panel fl-note fl-bevel-white fl-font-size-80">
                 	<a id="jasig" href="http://www.jasig.org" title="go to Jasig home page"></a>
                     <div id="copyright">
-                        <p>Copyright &copy; 2005 - 2013 欧飞网, Inc. All rights reserved.</p>
-                        <p>Powered by <a href="http://www.ofpay.com">欧飞网</a></p>
+                        <p>Copyright &copy; 2005 - 2013 1000.com, Inc. All rights reserved.</p>
+                        <p>Powered by <a href="http://www.ofpay.com" target="_blank">1000.com</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>-->
+        <!--<script type="text/JavaScript" src="http://pic.ofcard.com/ofui/common/jquery-1.4.min.js" ></script>-->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="<c:url value="/js/cas.js" />"></script>
+        <script type="text/javascript" src="<c:url value="js/cas.js" />"></script>
     </body>
 </html>
 
