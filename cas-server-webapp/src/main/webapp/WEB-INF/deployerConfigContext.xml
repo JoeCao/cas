@@ -195,7 +195,7 @@
             <map>
                 <!--<entry key="employeeNumber" value="sAMAccountName"/>-->
                 <entry key="displayName" value="displayName"/>
-                <!--<entry key="mail" value="mail"/>-->
+                <entry key="mail" value="mail"/>
                 <!--<entry key="telephoneNumber" value="userAccountControl"/>-->
             </map>
         </property>
@@ -222,7 +222,7 @@
                             <list>
                                 <!--<value>employeeNumber</value>-->
                                 <value>displayName</value>
-                                <!--<value>mail</value>-->
+                                <value>mail</value>
                                 <!--<value>telephoneNumber</value>-->
                             </list>
                         </property>
